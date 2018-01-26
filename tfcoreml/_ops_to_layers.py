@@ -49,6 +49,8 @@ _OP_REGISTRY = {
     'Relu': _layers.relu,
     'QuantizedRelu': _layers.relu,
     'Rsqrt': _layers.rsqrt,
+    'Sqrt': _layers.sqrt,
+    'Pow': _layers.pow,
     'Add': _layers.add,
     'Sub': _layers.sub,
     'Mul': _layers.mul,

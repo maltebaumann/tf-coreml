@@ -860,6 +860,24 @@ def square(op, context):
   context.builder.add_elementwise(
       output_name, [input_name, input_name], output_name, 'MULTIPLY')
 
+def pow(op, context):
+
+  input_name = compat.as_bytes(op.inputs[0].name)
+  output_name = compat.as_bytes(op.outputs[0].name)
+
+  context.translated[output_name] = True
+  context.builder.add_unary(
+    output_name, input_name, output_name, 'power')
+
+def sqrt(op, context):
+
+  input_name = compat.as_bytes(op.inputs[0].name)
+  output_name = compat.as_bytes(op.outputs[0].name)
+
+  context.translated[output_name] = True
+  context.builder.add_unary(
+    output_name, input_name, output_name, 'sqrt')
+
 def resize_nearest_neighbor(op, context):
 
   input_name = compat.as_bytes(op.inputs[0].name)
